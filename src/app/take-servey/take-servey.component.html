@@ -1,1 +1,49 @@
-<p>take-servey works!</p>
+<div class="task-survey">
+    <h1>{{question.title}}</h1>
+    <countdown #cd [config]="config" (event)="handleCountEvent($event)">
+    </countdown>
+    <!-- *ngIf="i === questionIndex" -->
+    <mat-card style="margin-top: 2rem;">
+        <div *ngFor="let question of question.questions; let i = index">
+            <div class="task-question" [style.display]="i === questionIndex ? 'block' : 'none'">
+                <h2>{{question.title}}</h2>
+
+                <!-- Radio type -->
+                <div *ngIf="question.type === 'radio'" class="radio-type">
+                    <ng-container *ngFor="let option of question.options">
+                        <label>
+                            <input type="radio" name="default" checked> {{option}}
+                          </label>
+                        <br>
+                        <br>
+                    </ng-container>
+                </div>
+
+                <!-- Input type  -->
+                <div *ngIf="question.type === 'text'" class="text-type">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Answer</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                      </mat-form-field>
+                </div>
+
+                <!-- Checkbox type -->
+                <div *ngIf="question.type === 'checkbox'" class="radio-type">
+                    <ng-container *ngFor="let option of question.options">
+                        <label>
+                            <input type="checkbox" > {{option}}
+                        </label>
+                        <br>
+                        <br>
+                    </ng-container>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="">
+            <button mat-flat-button (click)="previousQuestion()">Previous</button>
+            <button *ngIf="question.questions.length === questionIndex +1" mat-flat-button color="accent" (click)="anwSubmit()">Done</button>
+            <button *ngIf="question.questions.length !== questionIndex +1" mat-flat-button color="primary" (click)="nextQuestion()">Next</button>
+        </div>
+    </mat-card>
+</div>

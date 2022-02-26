@@ -1,0 +1,23 @@
+.task-survey {
+    padding: 2rem;
+    text-align: center;
+
+    .radio-type {
+        text-align: initial;
+        margin: auto;
+        width: 10%;
+        label {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.changed {
+    input[type=checkbox],
+    input[type=radio] {
+      // make it near black
+      filter:grayscale(1);
+      // or change the colour
+      filter:hue-rotate(180deg);
+    }
+}

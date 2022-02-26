@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultComponent } from './result/result.component';
 import { TakeServeyComponent } from './take-servey/take-servey.component';
 import { ServeyListComponent } from './servey-list/servey-list.component';
+import { CountdownModule } from 'ngx-countdown';
 
 
 
@@ -47,7 +48,8 @@ import { ServeyListComponent } from './servey-list/servey-list.component';
     MatSelectModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
