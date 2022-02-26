@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 type question = {
   title: string,
   type: string,
@@ -60,8 +60,9 @@ const SURVETS_LIST: PeriodicElement[] = [
 })
 export class ServeyListComponent implements OnInit {
 
-  displayedColumns: string[] = [ 'Created Date', 'Survey Title', 'Number of Questions', 'Time', 'Action'];
+  displayedColumns: string[] = ['Created Date', 'Survey Title', 'Number of Questions', 'Time', 'Action'];
   dataSource = SURVETS_LIST;
+
   order = [
     {
       name: 'Latest',
@@ -71,7 +72,7 @@ export class ServeyListComponent implements OnInit {
       name: 'Oldest',
       value: 'oldest'
     }
-  ];
+  ]
   question = [
     {
       name: 'Max Question',
@@ -81,7 +82,7 @@ export class ServeyListComponent implements OnInit {
       name: 'Min Question',
       value: 'min_question'
     }
-  ];
+  ]
 
   time = [
     {
@@ -92,16 +93,16 @@ export class ServeyListComponent implements OnInit {
       name: 'Min Time',
       value: 'min_time'
     }
-  ];
+  ]
 
-  constructor(private fb: FormBuilder) { };
+  constructor(private fb: FormBuilder) { }
   filter: FormGroup
   selectedDate = {
     start: null,
     end: null
   }
-  
   ngOnInit(): void {
+
     this.filter = this.fb.group({
       title: [null],
       created: [null],
@@ -128,5 +129,4 @@ export class ServeyListComponent implements OnInit {
     this.selectedDate.end = null
     this.filter.reset()
   }
-
 }
