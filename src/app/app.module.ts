@@ -22,6 +22,7 @@ import { ResultComponent } from './result/result.component';
 import { TakeServeyComponent } from './take-servey/take-servey.component';
 import { ServeyListComponent } from './servey-list/servey-list.component';
 import { CountdownModule } from 'ngx-countdown';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -49,7 +50,8 @@ import { CountdownModule } from 'ngx-countdown';
     MatDatepickerModule,
     MatMomentDateModule,
     MatNativeDateModule,
-    CountdownModule
+    CountdownModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

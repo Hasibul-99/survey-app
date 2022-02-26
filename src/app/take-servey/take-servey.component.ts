@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-take-servey',
@@ -34,7 +35,7 @@ export class TakeServeyComponent implements OnInit {
   };
   questionIndex = 0;
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +43,7 @@ export class TakeServeyComponent implements OnInit {
   handleCountEvent(event:any) {
     console.log(event);
     if (event.action === "done") {
-      console.log("submit answer");      
+      this.toastr.success('submit answer');  
     }
   }
 
@@ -58,5 +59,6 @@ export class TakeServeyComponent implements OnInit {
 
   anwSubmit() {
     console.log("submit answer");  
+    this.toastr.success('Survey Completed Successfully!');
   }
 }
