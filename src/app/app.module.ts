@@ -8,6 +8,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatCardModule } from '@angular/material/card';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultComponent } from './result/result.component';
@@ -32,7 +35,10 @@ import { ServeyListComponent } from './servey-list/servey-list.component';
     MatGridListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatBottomSheetModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
