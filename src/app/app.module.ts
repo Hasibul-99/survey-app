@@ -11,7 +11,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatCardModule } from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
+import { MatNativeDateModule, DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { Moment } from 'moment'
+import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultComponent } from './result/result.component';
 import { TakeServeyComponent } from './take-servey/take-servey.component';
@@ -38,7 +43,11 @@ import { ServeyListComponent } from './servey-list/servey-list.component';
     MatInputModule,
     MatListModule,
     MatBottomSheetModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
